@@ -1,0 +1,16 @@
+<%= render BeyondCanvas::ModalComponent.new(title: 'Modal title',
+                                          dismiss_icon: true,
+                                          footer_alignment: 'space-between') do |component| %>
+
+  <p>Modal with space-between alignment</p>
+
+  <% component.footer do %>
+    <div>
+      <%= button_tag 'Delete', class: 'button__solid--danger', type: :submit %>
+    </div>
+    <div>
+      <%= button_tag 'Cancel', type: 'button', class: 'button__solid--secondary', data: { action: 'modal#hideModal' } %>
+      <%= button_tag 'Save', class: 'button__solid--primary', type: :submit, data: { action: 'modal#hideModal' } %>
+    </div>
+  <% end %>
+<% end %>

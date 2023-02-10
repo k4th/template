@@ -1,0 +1,17 @@
+# frozen_string_literal: true
+
+class BeyondCanvasCreate<%= table_name.camelize %> < ActiveRecord::Migration<%= migration_version %>
+  def change
+    create_table :<%= table_name %><%= primary_key_type %> do |t|
+      t.string :beyond_api_url, null: false, unique: true
+      t.string :beyond_reseller
+      t.text   :beyond_access_token
+      t.text   :beyond_refresh_token
+      t.text   :beyond_shared_secret
+
+      t.timestamps
+    end
+
+    add_index :<%= table_name %>, :beyond_api_url, unique: true
+  end
+end

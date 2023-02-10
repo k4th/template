@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Previews</title>
+
+  <% BeyondCanvas.stylesheets.each do |style, options| %>
+    <%= stylesheet_link_tag style, options %>
+  <% end %>
+
+  <%= javascript_importmap_tags %>
+</head>
+
+
+<body class="beyond-canvas body--public">
+
+  <main class="main">
+
+    <div class="main-wrapper">
+
+      <%= yield %>
+
+    </div>
+
+  </main>
+</body>
+</html>

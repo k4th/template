@@ -1,0 +1,27 @@
+<div id="flash">
+
+  <% flash.each do |key, value| %>
+
+    <% unless value.blank? %>
+
+      <div class="flash" data-controller="flash" data-flash-target="flash" style="visibility: hidden;">
+
+        <div class="flash__icon flash__icon--<%= key %>">
+          <%= get_flash_icon(key) %>
+        </div>
+
+        <div class="flash__message">
+          <%= value %>
+        </div>
+
+        <div class="flash__close" data-action="click->flash#close">
+          <%= inline_svg_tag 'icons/flash_close.svg' %>
+        </div>
+
+      </div>
+
+    <% end %>
+
+  <% end %>
+
+</div>

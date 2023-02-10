@@ -1,0 +1,8 @@
+<%= render BeyondCanvas::ModalComponent.new(title: 'Modal with footer title') do |component| %>
+
+  <p>Modal with footer content</p>
+
+  <% component.footer do %>
+    <%= link_to 'Click me', '/rails/view_components', class: 'button__solid--secondary', target: '_parent' %>
+  <% end %>
+<% end %>

@@ -1,0 +1,22 @@
+<head>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <meta name='viewport' content='width=device-width,initial-scale=1' />
+
+  <title><%= full_title(yield :title) %></title>
+
+  <%= favicon_link_tag BeyondCanvas.favicon if BeyondCanvas.favicon %>
+
+  <% BeyondCanvas.stylesheets.each do |style, options| %>
+    <%= stylesheet_link_tag style, options %>
+  <% end %>
+
+  <% if BeyondCanvas.custom_styles? %>
+    <%= stylesheet_link_tag current_shop.custom_styles_url %>
+  <% end %>
+
+  <%= javascript_importmap_tags %>
+
+</head>

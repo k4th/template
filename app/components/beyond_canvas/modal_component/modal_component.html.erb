@@ -1,0 +1,30 @@
+<%= turbo_frame_tag 'modal' do %>
+  <%= tag.div data: { controller: 'modal',
+                      modal_target: 'modal',
+                      action: modal_actions },
+                      class: 'modal' do %>
+    <%= tag.div class: 'modal__dialog' do %>
+      <%= tag.div data: { modal_target: 'modalContent' }, class: 'modal__content' do %>
+        <%= tag.div class: 'modal__header' do %>
+          <h3 class='modal__title'><%= @title %></h3>
+          <% if @dismiss_icon %>
+            <%= tag.div data: { action: 'click->modal#hideModal' }, class: 'modal__close' %>
+          <% end %>
+        <% end %>
+        <scroll-shadow>
+          <%= tag.div class: 'modal__body' do %>
+            <%= content %>
+          <% end %>
+        </scroll-shadow>
+        <% if footer? %>
+          <%= tag.div class: 'modal__footer' do %>
+            <%= tag.div class: "form__actions#{@footer_alignment}" do %>
+              <%= footer %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+

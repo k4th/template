@@ -1,0 +1,73 @@
+---
+# This file collects all possible API errors,
+# If you find any error that is not listed here, please make a PR to https://github.com/ePages-de/beyond_canvas
+en:
+  beyond_api:
+    errors:
+      active-coupon-campaigns-exceeded: The coupon campaign cannot be created. The limit for coupon campaigns in this shop (1) has already been reached.
+      attribute-name-already-used: A public attribute with the name createSku was already created.
+      cancel-process-partial-refund-not-allowed: The order was paid with a payment method that doesn't allow partial refunds. Thus, the request has to include all product line items of the order.
+      cannot-create-pickup-process: Cannot create a pickup process for orders with a shipping line item.
+      cannot-create-shipping-process: The quantity of at least one product line item included in the request exceeds the quantity of not yet dispatched items of the product line item.
+      cannot-delete-last-pickup-option: In order to ensure the checkout functionality of the shop, the deletion of the last pickup option is not allowed if the shop has no shipping methods.
+      category-already-exists: A category with the name '${resource}' already exists.
+      conversion-failed: A value could not be converted to its target format.
+      coupon-campaign-name-not-unique: A coupon campaign with the name '${resource}' already exists.
+      coupon-campaign-redemption-limit-exceeded: The coupon campaign has reached the configured maximum number of redemptions.
+      coupon-campaign-status-not-valid: A coupon can only be redeemed if the related coupon campaign has the status 'ACTIVE'. The specified coupon campaign has the status 'EXPIRED'.
+      cross-sell-already-assigned: The maximum number of cross-sells for this product (1) has been reached.
+      data-access-error: An unexpected error occurred in the data access layer.
+      discount-or-fee-is-null: It is required to provide a value and a type for the property `discountOrFee`.
+      email-change-not-allowed: Email address of STOREFRONT customer cannot be changed this way.
+      feature-not-enabled: The feature for the requested functionality is not assigned to the shop.
+      generic_error: 'Unable to process your request. Please try again later. If the error persists, contact the support and provide the following identifier: %{trace_id}.'
+      http-message-not-readable: The JSON payload could not be deserialized.
+      illegal-argument: The JSON input contained illegal values.
+      illegal-status-transition: Once a coupon campaign had the status ACTIVE, it is not possible to change the status to DRAFT.
+      image-uri-already-exists: 'The images with the following URIs have already been added to the resource: [${resource}]'
+      input-validation-failed: A constraint validation failed, e.g. a product SKU within a shop has to be unique.
+      integrity-constraint-violation: A database constraint was violated, e.g. the length of a billing address first name has to meet the character limits.
+      internal-error: An unknown error occurred.
+      invalid-coupon-code: 'The coupon code validation failed with following messages: Code doesn''t exist'
+      invalid-cross-sell-strategy: 'The cross-sell type MANUAL only supports the following strategy: [all-ids-match].'
+      invalid-external-image: The provided image URI returns an error or the image host does not exist.
+      invalid-image-content-type: 'The provided image URI does not have a valid media type (current media type: text/html).'
+      invalid-sort-property: 'The property ''invalidProperty'' is no valid sort property. Variations can only be sorted by the following properties: ''[sku, salesPrice, name, stockLevel, status]''.'
+      invalid-tax-class: The applicable tax region doesn't support the tax class '${resource}'.
+      last-shipping-zone-serving-shop-country: Cannot remove the shop country from the last shipping zone serving it
+      location-is-used-already: The provided location ID is already used by another pickup option.
+      location-not-found: The provided location ID does not match a location of the shop.
+      missing-variation-attribute-values: The number of the variation attribute values provided in the request does not match the number of the variation attribute values defined for the variation attribute ${resource} (6 instead of 5).
+      no-such-product-line-item: The specified product line item is not included in the order.
+      operation-not-available: 'The request (adjust-available-stock) cannot be performed for variation products (affected ID: ${resource}).'
+      optimistic-locking-failure: The update of the object failed because it has been changed in the meantime.
+      order-confirmation-expired: Order is no longer available for this purpose.
+      payment-method-definition-missing-locale: Payment method definition testPMD is not localized for locale de-AT needed by shop ${resource}
+      payment-method-definition-owned-by-other-client: A payment method definition with this name has already been created by a different client.
+      payment-method-discount-or-fee-type-mismatch: The provided `discountOrFee` type does not match the provided `discountOrFee` value.
+      payment-method-error: The payment method cannot be activated because the merchant's payment provider account is not yet properly connected to the shop.
+      payment-method-unique-violation: Payment method for the payment method definition testPMD already exists.
+      pickup-process-already-exists: Partial pickups are not supported. So, the creation of multiple pickup processes is not allowed.
+      product-attribute.badRequest: The product attribute type ('STRING') does not match the product attribute definition type ('NUMBER').
+      product-attribute.nameAlreadyUsed: The product attribute definition key 'filling_capacity' has already been definedfor the product '${resource}'.
+      product-has-too-many-images: '[1] image(s) could not be added. The maximum number of images for this product (${resource}) has been reached.'
+      product-limit-exceeded: The maximum number of products in this shop (1) has been reached.
+      product-variation-not-found: The variation product 5e7e8978-c2dc-4991-a1f2-aed8e354449b does not have a variation with the UUID afaa2b0b-0538-4ee4-9f1f-3f1677a4bf04.
+      product.availability.invalid-availability-state: The stock management for Product{id=${resource}, sku=vino020, name=Rioja Castillo de Puerto (2013)} is already enabled.
+      product.product.single-uri-expected: The request to assign a product image as the default image must only contain 1 URI.
+      product.storage.CorruptFileException: The image upload failed. The file might be empty or corrupt.
+      resource-not-found: The resource %{resource_id} could not be found.
+      return-process-partial-refund-not-allowed: The order was paid with a payment method that doesn't allow partial refunds. Thus, the request has to include all product line items of the order.
+      script-tag.not-found: script-tag with id %{resource_id} could not be found
+      shipping-address-not-allowed: Setting a shipping address is not allowed for carts with a pickup line item.
+      shop-country-not-set: At least one shipping zone of the shop must include the shop country.
+      shop.image.image-exists-for-unique-label: A shop image with the label invoice logo already exists.
+      shop.image.invalid-content-type: The content type application/json is not allowed. It must be one of [image/jpeg, image/png, image/gif].
+      shop.invoice-logo.invalid-size: The invoice logo image size must be 1140*420 px.
+      sort-missing-variation-images: The request does not contain all variation image URIs available for the variation ${resource}.
+      tenant-id-mismatch: This resource can only be accessed in system tenancy
+      unauthorized: The client was revoked.
+      variation-attributes-not-found: 'The following variation attribute IDs were not found: ${resource}.'
+      variation-has-too-many-images: '[1] image(s) could not be added. The maximum number of images for this variation (${resource}) has been reached.'
+      variation-properties-not-enabled: 'The following variation properties must be enabled in order to perform this request: [defaultImage].'
+      webhook-delivery-failed: 'Could not deliver the webhook to the registered submission URL: http://example.com/test'
